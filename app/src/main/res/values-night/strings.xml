@@ -1,18 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Todo</string>
 	<string name="title">Title</string>
 	<string name="message">Message</string>
-	<string name="Save">Save</string>
 	<string name="update">Update</string>
 	<string name="search">Search</string>
 	<string name="filter">Filter</string>
-	<string name="high">High</string>
 	<string name="low">Low</string>
 	<string name="delete_all">Delete All</string>
-	<string-array name="Priority">
-		<item>High</item>
-		<item>Low</item>
-		<item>Medium</item>
-
-	</string-array>
 </resources>

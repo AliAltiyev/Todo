@@ -4,10 +4,33 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/application_graph"
 	app:startDestination="@id/mainFragment">
-
+	<fragment
+		android:id="@+id/addNewFragment"
+		android:name="com.altyyev.todo.todo.ui.fragments.add.AddNewFragment"
+		android:label="Add"
+		tools:layout="@layout/fragment_add_new">
+		<action
+			android:id="@+id/action_addNewFragment_to_mainFragment"
+			app:destination="@id/mainFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/updateFragment2"
+		android:name="com.altyyev.todo.todo.ui.fragments.update.UpdateFragment"
+		android:label="Update"
+		tools:layout="@layout/fragment_update">
+		<action
+			android:id="@+id/action_updateFragment2_to_mainFragment"
+			app:destination="@id/mainFragment" />
+	</fragment>
 	<fragment
 		android:id="@+id/mainFragment"
-		android:name="com.altyyev.todo.ui.MainFragment"
-		android:label="fragment_main"
-		tools:layout="@layout/fragment_main" />
+		android:name="com.altyyev.todo.todo.ui.fragments.main.MainFragment"
+		android:label="Main">
+		<action
+			android:id="@+id/action_mainFragment_to_addNewFragment"
+			app:destination="@id/addNewFragment" />
+		<action
+			android:id="@+id/action_mainFragment_to_updateFragment2"
+			app:destination="@id/updateFragment2" />
+	</fragment>
 </navigation>
