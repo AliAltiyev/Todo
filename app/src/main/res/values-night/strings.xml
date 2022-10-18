@@ -7,4 +7,7 @@
 	<string name="filter">Filter</string>
 	<string name="low">Low</string>
 	<string name="delete_all">Delete All</string>
+	<string name="cancel">Cancel</string>
+	<string name="are_you_sure_to_delete">Are you sure you want to delete all</string>
+	<string name="undo_deleted_item">Undo deleted item</string>
 </resources>

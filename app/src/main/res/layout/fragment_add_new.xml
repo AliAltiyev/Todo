@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-
-	<LinearLayout
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
@@ -77,9 +73,10 @@
 				android:backgroundTint="@color/white"
 				android:gravity="start"
 				android:hint="@string/message"
+				android:ellipsize="end"
 				android:inputType="text"
-				android:maxLength="30"
-				android:maxLines="1"
+				android:maxLength="100"
+				android:maxLines="10"
 				android:paddingStart="8dp"
 				android:paddingEnd="8dp" />
 		</com.google.android.material.textfield.TextInputLayout>
@@ -100,6 +97,5 @@
 			app:strokeColor="@color/purple_150"
 			app:strokeWidth="2dp" />
 	</LinearLayout>
-</ScrollView>
 
 

@@ -14,9 +14,25 @@ interface Dao {
     suspend fun insertTodo(model: RoomModel)
 
     @Query("DELETE FROM todo_table")
-    fun deleteAllTodos()
+    suspend fun deleteAllTodos()
+
+    @Delete
+    suspend fun deleteTodo(roomModel: RoomModel)
 
     @Update
     suspend fun updateTodo(model: RoomModel)
+
+    @Query("SELECT * FROM todo_table WHERE title LIKE :searchQuery")
+    fun searchQuery(searchQuery: String): Flow<List<RoomModel>>
+
+    @Query("SELECT * FROM todo_table ORDER BY CASE  WHEN priority LIKE 'H' THEN 1 WHEN priority LIKE" +
+            " 'M' THEN 2 WHEN priority LIKE 'L' THEN 3 END")
+    fun sortByHighPriority(): Flow<List<RoomModel>>
+
+
+    @Query("SELECT * FROM todo_table ORDER BY CASE  WHEN priority LIKE 'L' THEN 1 WHEN priority LIKE" +
+            " 'M' THEN 2 WHEN priority LIKE 'H' THEN 3 END")
+    fun sortByLowPriority(): Flow<List<RoomModel>>
+
 
 }

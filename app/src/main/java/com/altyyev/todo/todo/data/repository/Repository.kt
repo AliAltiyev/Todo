@@ -13,9 +13,19 @@ class Repository @Inject constructor(private val dao: Dao) {
         dao.updateTodo(model)
     }
 
-    fun deleteAllTodo() {
+    suspend fun deleteTodo(model: RoomModel) {
+        dao.deleteTodo(model)
+    }
+
+    suspend fun deleteAllTodo() {
         dao.deleteAllTodos()
     }
 
     fun getAllTodos() = dao.getAllTodos()
+
+    fun searchQuery(searchQuery: String) = dao.searchQuery(searchQuery)
+
+    fun sortByLowPriority() = dao.sortByLowPriority()
+
+    fun sortByHighPriority() = dao.sortByHighPriority()
 }

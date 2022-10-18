@@ -22,9 +22,8 @@ class AddNewFragment : Fragment(R.layout.fragment_add_new) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setSpinnerPriority()
-
         binding.run {
+            spinner.onItemSelectedListener = viewModel.listener
             saveButton.setOnClickListener {
                 if (!TextUtils.isEmpty(titleText.text)
                     && !TextUtils.isEmpty(messageText.text)
@@ -49,20 +48,12 @@ class AddNewFragment : Fragment(R.layout.fragment_add_new) {
         }
     }
 
-    private fun setSpinnerPriority() {
-        binding.spinner.onItemSelectedListener = viewModel.listener
-    }
-
     private fun insertTodo(model: RoomModel) {
         viewModel.insertTodo(model)
     }
 
     private fun parsePriority(priority: String): Priority {
-        return when (priority) {
-            "High" -> Priority.HIGH
-            "Medium" -> Priority.MEDIUM
-            "Low" -> Priority.LOW
-            else -> Priority.LOW
-        }
+        return viewModel.parsePriority(priority)
+
     }
 }

@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.altyyev.todo.R
+import com.altyyev.todo.todo.data.Priority
 import com.altyyev.todo.todo.data.RoomModel
 import com.altyyev.todo.todo.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -40,4 +41,14 @@ class AddNewViewModel @Inject constructor(private val repository: Repository,@Ap
             repository.insertTodo(model)
         }
     }
+
+    fun parsePriority(priority: String): Priority {
+        return when (priority) {
+            "High" -> Priority.HIGH
+            "Medium" -> Priority.MEDIUM
+            "Low" -> Priority.LOW
+            else -> Priority.LOW
+        }
+    }
+
 }
