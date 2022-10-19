@@ -40,7 +40,7 @@ class AddNewFragment : Fragment(R.layout.fragment_add_new) {
                 } else {
                     Snackbar.make(
                         requireView(),
-                        "You have not entered title or message try again",
+                        R.string.validation_is_not_successfully,
                         Snackbar.LENGTH_LONG
                     ).show()
                 }

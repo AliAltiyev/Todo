@@ -16,9 +16,9 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
 
     val getAllTodos: LiveData<List<RoomModel>> = repository.getAllTodos().asLiveData()
 
-    val sortByHighPriority: LiveData<List<RoomModel>> = repository.sortByHighPriority().asLiveData()
+    val sortByHighPriority: LiveData<List<RoomModel>> = repository.sortByHighPriority()
 
-    val sortByLowPriority: LiveData<List<RoomModel>> = repository.sortByLowPriority().asLiveData()
+    val sortByLowPriority: LiveData<List<RoomModel>> = repository.sortByLowPriority()
 
 
     fun deleteAll() {
@@ -28,6 +28,7 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
     }
 
     fun searchQuery(query: String) = repository.searchQuery(query)
+
 
 
 }

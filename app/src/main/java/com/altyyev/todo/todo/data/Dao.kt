@@ -1,5 +1,6 @@
 package com.altyyev.todo.todo.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
 import kotlinx.coroutines.flow.Flow
@@ -25,14 +26,11 @@ interface Dao {
     @Query("SELECT * FROM todo_table WHERE title LIKE :searchQuery")
     fun searchQuery(searchQuery: String): Flow<List<RoomModel>>
 
-    @Query("SELECT * FROM todo_table ORDER BY CASE  WHEN priority LIKE 'H' THEN 1 WHEN priority LIKE" +
-            " 'M' THEN 2 WHEN priority LIKE 'L' THEN 3 END")
-    fun sortByHighPriority(): Flow<List<RoomModel>>
+    @Query("SELECT * FROM todo_table ORDER BY CASE WHEN priority LIKE 'H%' THEN 1 WHEN priority LIKE 'M%' THEN 2 WHEN priority LIKE 'L%' THEN 3 END")
+    fun sortByHighPriority(): LiveData<List<RoomModel>>
 
-
-    @Query("SELECT * FROM todo_table ORDER BY CASE  WHEN priority LIKE 'L' THEN 1 WHEN priority LIKE" +
-            " 'M' THEN 2 WHEN priority LIKE 'H' THEN 3 END")
-    fun sortByLowPriority(): Flow<List<RoomModel>>
+    @Query("SELECT * FROM todo_table ORDER BY CASE WHEN priority LIKE 'L%' THEN 1 WHEN priority LIKE 'M%' THEN 2 WHEN priority LIKE 'H%' THEN 3 END")
+    fun sortByLowPriority(): LiveData<List<RoomModel>>
 
 
 }

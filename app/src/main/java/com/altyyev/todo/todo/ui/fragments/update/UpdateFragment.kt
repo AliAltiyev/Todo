@@ -106,7 +106,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel =
                 NotificationChannel(NOTIFICATION_ID, NOTIFICATION_CHANNEL_NAME, importance)
-            channel.description = "You added reminder in Todo List"
+            channel.description = getString(R.string.you_added_reminder)
             val notificationManager =
                 getSystemService(requireContext(), NotificationManager::class.java)
             notificationManager?.createNotificationChannel(channel)
@@ -124,7 +124,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
             R.id.delete -> {
                 viewModel.deleteTodo(navArgs.item)
                 findNavController().navigate(R.id.action_updateFragment2_to_mainFragment)
-                Toast.makeText(requireContext(), "Deleted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.Deleted), Toast.LENGTH_SHORT).show()
             }
             R.id.time -> {
                 val picker =
@@ -132,7 +132,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
                         .setTimeFormat(TimeFormat.CLOCK_24H)
                         .setHour(12)
                         .setMinute(0)
-                        .setTitleText("Select Appointment time")
+                        .setTitleText(getString(R.string.selecet_time))
                         .setInputMode(INPUT_MODE_CLOCK)
                         .build()
                 picker.show(requireActivity().supportFragmentManager, "123")
@@ -152,7 +152,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
                     )
                     Toast.makeText(
                         requireContext(),
-                        "Reminder is successfully added",
+                        getString(R.string.reminder_successfully_added),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -180,7 +180,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
                 )
                 findNavController().navigate(R.id.action_updateFragment2_to_mainFragment)
             } else {
-                Snackbar.make(requireView(), "Validation is not successfully", Snackbar.LENGTH_LONG)
+                Snackbar.make(requireView(), getString(R.string.validation_is_not_successfully), Snackbar.LENGTH_LONG)
                     .show()
             }
 

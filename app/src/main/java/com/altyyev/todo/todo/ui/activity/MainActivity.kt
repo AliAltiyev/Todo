@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.altyyev.todo.R
 import com.altyyev.todo.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
