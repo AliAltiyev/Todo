@@ -13,10 +13,20 @@
 	<string name="are_you_sure_to_delete">Are you sure you want to delete all</string>
 	<string name="undo_deleted_item">Undo deleted item</string>
 	<string name="undo">undo</string>
+	<string name="delete">delete</string>
+	<string name="time">time</string>
+	<string name="add">Add</string>
+	<string name="main">Main</string>
+
+	<string name="you_added_reminder">You added reminder in Todo List</string>
+	<string name="Deleted">Deleted</string>
+	<string name="selecet_time">Select Appointment time</string>
+	<string name="reminder_successfully_added">Reminder is successfully added</string>
+	<string name="validation_is_not_successfully">Validation is not successfully</string>
 	<string-array name="Priority">
 		<item>High</item>
 		<item>Low</item>
 		<item>Medium</item>
-
 	</string-array>
+	<!-- TODO: Remove or change this placeholder text -->
 </resources>

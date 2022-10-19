@@ -7,7 +7,7 @@
 	<fragment
 		android:id="@+id/addNewFragment"
 		android:name="com.altyyev.todo.todo.ui.fragments.add.AddNewFragment"
-		android:label="Add"
+		android:label="@string/add"
 		tools:layout="@layout/fragment_add_new">
 		<action
 			android:id="@+id/action_addNewFragment_to_mainFragment"
@@ -18,7 +18,7 @@
 	<fragment
 		android:id="@+id/updateFragment2"
 		android:name="com.altyyev.todo.todo.ui.fragments.update.UpdateFragment"
-		android:label="Update"
+		android:label="@string/update"
 		tools:layout="@layout/fragment_update">
 		<action
 			android:id="@+id/action_updateFragment2_to_mainFragment"
@@ -32,7 +32,7 @@
 	<fragment
 		android:id="@+id/mainFragment"
 		android:name="com.altyyev.todo.todo.ui.fragments.main.MainFragment"
-		android:label="Main">
+		android:label="@string/main">
 		<action
 			android:id="@+id/action_mainFragment_to_addNewFragment"
 			app:destination="@id/addNewFragment"

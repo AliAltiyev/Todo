@@ -1,13 +1,11 @@
 package com.altyyev.todo.todo.ui.fragments.main
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
@@ -89,8 +87,9 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
                 builder.show()
             }
             R.id.high -> {
-                viewModel.sortByHighPriority.observe(viewLifecycleOwner) { list ->
-                    adapter.submitList(list)
+                viewModel.sortByHighPriority.observe(viewLifecycleOwner){
+                    adapter.submitList(it)
+
                 }
             }
             R.id.low -> {
@@ -120,7 +119,7 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
 
     private fun undoDeletedItem(view: View, model: RoomModel) =
         Snackbar.make(view, getString(R.string.undo_deleted_item), Snackbar.LENGTH_LONG).setAction(
-            "undo"
+            R.string.undo
         ) {
             addViewModel.insertTodo(model)
         }.show()
