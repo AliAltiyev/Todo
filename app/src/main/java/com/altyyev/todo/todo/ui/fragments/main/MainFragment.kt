@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
@@ -22,6 +23,7 @@ import com.altyyev.todo.todo.ui.adapter.TodoAdapter
 import com.altyyev.todo.todo.ui.fragments.add.AddNewViewModel
 import com.altyyev.todo.todo.ui.fragments.update.UpdateViewModel
 import com.altyyev.todo.todo.util.viewBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import jp.wasabeef.recyclerview.animators.ScaleInBottomAnimator
@@ -76,7 +78,7 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.delete_all -> {
-                val builder = AlertDialog.Builder(requireContext())
+                val builder = MaterialAlertDialogBuilder(requireContext())
                 builder.setTitle(R.string.delete_all)
                 builder.setIcon(R.drawable.delete_icon)
                 builder.setPositiveButton(R.string.delete_all) { _, _ ->

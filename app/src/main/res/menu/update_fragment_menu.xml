@@ -5,7 +5,10 @@
 	<item
 		android:id="@+id/delete"
 		android:title="delete"
-		app:showAsAction="withText"
-
-		/>
+		app:showAsAction="withText" />
+	<item
+		android:id="@+id/time"
+		android:icon="@drawable/time_icon"
+		android:title="time"
+		app:showAsAction="ifRoom" />
 </menu>
