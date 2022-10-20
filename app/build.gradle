@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -42,12 +45,14 @@ dependencies {
     def hilt_version = '2.42'
     def nav_version = "2.5.2"
     def roomVersion = "2.4.3"
+    def lottieVersion = "3.4.0"
+
 
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -81,11 +86,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-
-
     // GSON body parser
     implementation 'com.google.code.gson:gson:2.9.0'
-
 
     //Room
     implementation("androidx.room:room-runtime:$roomVersion")
@@ -93,11 +95,13 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
 
-    //Custom State Layout
-    implementation 'com.github.yusufonderd:StateLayout:0.1.1'
-
-
     //MlKit
     implementation 'com.google.mlkit:translate:17.0.1'
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //Animated RecyclerView
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
 
 }

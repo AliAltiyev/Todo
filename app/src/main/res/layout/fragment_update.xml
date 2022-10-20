@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".todo.ui.fragments.add.AddNewFragment">
+
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/title_container"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginEnd="16dp"
+		app:boxCornerRadiusBottomEnd="16dp"
+		app:boxCornerRadiusBottomStart="16dp"
+		app:boxCornerRadiusTopEnd="16dp"
+		app:boxCornerRadiusTopStart="16dp"
+		app:boxStrokeWidth="1dp"
+		app:endIconMode="clear_text"
+		app:helperText="Title*"
+		app:helperTextEnabled="true"
+		app:helperTextTextColor="@color/purple_150">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/title_text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:backgroundTint="@color/white"
+			android:hint="@string/title"
+			android:inputType="text"
+			android:maxLength="30"
+			android:maxLines="1"
+			android:paddingStart="8dp"
+			android:paddingEnd="8dp" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<Spinner
+		android:id="@+id/spinner"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_margin="16dp"
+		android:background="@drawable/spinner_background"
+		android:entries="@array/Priority" />
+
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/message_container"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		android:layout_width="match_parent"
+		android:layout_height="300dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginEnd="16dp"
+		app:boxCornerRadiusBottomEnd="16dp"
+		app:boxCornerRadiusBottomStart="16dp"
+		app:boxCornerRadiusTopEnd="16dp"
+		app:boxCornerRadiusTopStart="16dp"
+		app:boxStrokeWidth="1dp"
+		app:endIconMode="clear_text"
+		app:helperText="Message*"
+		app:helperTextEnabled="true"
+		app:helperTextTextColor="@color/purple_150">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/message_text"
+			android:layout_width="match_parent"
+			android:layout_height="276dp"
+			android:backgroundTint="@color/white"
+			android:gravity="start"
+			android:hint="@string/message"
+			android:inputType="text"
+			android:maxLength="100"
+			android:maxLines="10"
+			android:paddingStart="8dp"
+			android:paddingEnd="8dp" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/update_button"
+		style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginEnd="16dp"
+		android:fontFamily="@font/archivo"
+		android:text="@string/update"
+		android:textStyle="bold"
+		app:cornerRadius="16dp"
+		app:rippleColor="@color/purple_150"
+		app:strokeColor="@color/purple_150"
+		app:strokeWidth="2dp" />
+</LinearLayout>
+
